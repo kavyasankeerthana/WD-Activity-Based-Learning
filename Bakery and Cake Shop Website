@@ -1,0 +1,469 @@
+Code:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweet Treats Bakery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+
+        .heading {
+            background-color: #1e1b4b;
+            text-align: center;
+            padding: 25px;
+            border-bottom: 4px solid #4338ca;
+        }
+
+        .heading h1 {
+            color: #818cf8;
+            font-size: 35px;
+            margin: 0;
+        }
+
+        .heading p {
+            color: #c7d2fe;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: #09090b;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #818cf8;
+        }
+
+        .banner {
+            background-color: #312e81;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 3px solid #4338ca;
+        }
+
+        .banner h2 {
+            color: #e0e7ff;
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .banner p {
+            font-size: 18px;
+            color: #c7d2fe;
+            margin: 8px 0;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        h2 {
+            color: #818cf8;
+            text-align: center;
+        }
+
+        .event-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .event-card {
+            background-color: #1e293b;
+            border: 2px solid #4f46e5;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-card h3 {
+            color: #c7d2fe;
+            margin-top: 10px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-card p {
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+
+        .price {
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e293b;
+        }
+
+        th, td {
+            border: 2px solid #4f46e5;
+            padding: 12px;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        th {
+            background-color: #312e81;
+            color: #e0e7ff;
+        }
+
+        .coordinator {
+            background-color: #1e293b;
+            padding: 15px;
+            border: 2px solid #4f46e5;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .coordinator h3 {
+            color: #c7d2fe;
+        }
+
+        .coordinator p {
+            color: #cbd5e1;
+        }
+
+        .rules {
+            background-color: #1e293b;
+            padding: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 10px;
+            color: #cbd5e1;
+        }
+
+        .rules li {
+            padding: 8px;
+        }
+
+        form {
+            background-color: #1e293b;
+            padding: 25px;
+            max-width: 600px;
+            margin: auto;
+            border: 2px solid #4f46e5;
+            border-radius: 10px;
+            color: #cbd5e1;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #c7d2fe;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #4f46e5;
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+
+        .event-choice {
+            margin-top: 10px;
+        }
+
+        .event-choice input {
+            width: auto;
+        }
+
+        button {
+            background-color: #4f46e5;
+            color: #e2e8f0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6366f1;
+        }
+
+        .bottom {
+            background-color: #09090b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .event-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            .heading h1 {
+                font-size: 27px;
+            }
+
+            .banner h2 {
+                font-size: 25px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1>SWEET TREATS BAKERY</h1>
+        <p>Freshly Baked with Affection; Every Single Day</p>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Seasonal Offers</a>
+        <a href="#custom">Custom Cakes</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order Form</a>
+    </nav>
+
+    <div class="banner" id="home">
+        <h2>WELCOME TO SWEET TREATS BAKERY</h2>
+        <p>Enjoy delicious cakes, pastries, cookies, and custom designs!</p>
+        <p>Working Hours: 10:00 AM - 8:00 PM</p>
+        <p>Location: Sweet Treats Bakery,Vikas Nagar,Vijayawada, Andhra Pradesh</p>
+    </div>
+
+    <div class="content" id="products">
+        <h2>OUR BAKERY PRODUCTS</h2>
+
+        <h2>Fresh Cakes & Pastries</h2>
+
+        <div class="event-container">
+
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>Rich and moist chocolate cake topped with soft cream.</p>
+                <p class="price">Price: ₹550</p>
+            </div>
+
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600" alt="Strawberry Pastry">
+                <h3>Strawberry Pastry</h3>
+                <p>Fresh layer pastry topped with natural strawberry glaze.</p>
+                <p class="price">Price: ₹90</p>
+            </div>
+
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=600" alt="Cupcakes">
+                <h3>Assorted Cupcakes</h3>
+                <p>Soft fluffy cupcakes served with flavorful frosting.</p>
+                <p class="price">Price: ₹60 each</p>
+            </div>
+
+        </div>
+
+        <h2>Cookies & Snacks</h2>
+
+        <div class="event-container">
+
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600" alt="Cookies">
+                <h3>Butter Cookies</h3>
+                <p>Crispy homemade butter cookies prepared daily.</p>
+                <p class="price">Price: ₹150 / pack</p>
+            </div>
+
+            <div class="event-card">
+                <img src="https://gastro-marktplatz.de/wp-content/uploads/2025/03/Donuts-e1741192755444.jpg" alt="Donuts">
+                <h3>Glazed Donuts</h3>
+                <p>Freshly baked soft donuts covered in chocolate glaze.</p>
+                <p class="price">Price: ₹70 each</p>
+            </div>
+
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600" alt="Custom Cake">
+                <h3>Custom Designer Cakes</h3>
+                <p>Tailored custom cakes for birthdays and events.</p>
+                <p class="price">Starting at ₹800</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content" id="offers">
+        <h2>SEASONAL OFFERS & PRICE LIST</h2>
+
+        <table>
+            <tr>
+                <th>Offer / Item</th>
+                <th>Description</th>
+                <th>Discount Rate</th>
+                <th>Validity</th>
+            </tr>
+
+            <tr>
+                <td>Weekend Special</td>
+                <td>Buy 2 Pastries & Get 1 Free</td>
+                <td>Buy 2 Get 1</td>
+                <td>Every Sat & Sun</td>
+            </tr>
+            <tr>
+                <td>Birthday Party Combo</td>
+                <td>1kg Custom Cake + 10 Cupcakes</td>
+                <td>15% OFF</td>
+                <td>All Month</td>
+            </tr>
+            <tr>
+                <td>Festival Gift Box</td>
+                <td>Assorted Box of 12 Homemade Cookies</td>
+                <td>10% OFF</td>
+                <td>Festive Season</td>
+            </tr>
+            <tr>
+                <td>Early Bird Discount</td>
+                <td>Order Custom Cakes 5 Days in Advance</td>
+                <td>10% OFF</td>
+                <td>Always Active</td>
+            </tr>
+        </table>
+    </div>
+    <div class="content" id="custom">
+        <h2>CUSTOM CAKE DESIGNS</h2>
+        <div class="event-container">
+            <div class="coordinator">
+                <h3>Birthday Celebrations</h3>
+                <p><b>Flavors:</b> Chocolate, Vanilla, Butterscotch, Red Velvet</p>
+                <p><b>Starting Price:</b> ₹800 / kg</p>
+            </div>
+            <div class="coordinator">
+                <h3>Wedding & Anniversary</h3>
+                <p><b>Flavors:</b> Tiered Fruit Cakes, Truffle, Black Forest</p>
+                <p><b>Starting Price:</b> ₹1200 / kg</p>
+            </div>
+            <div class="coordinator">
+                <h3>Corporate & Events</h3>
+                <p><b>Flavors:</b> Photo Cakes, Theme Cakes, Cupcake Towers</p>
+                <p><b>Starting Price:</b> ₹1000 / kg</p>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="contact">
+        <h2>STORE CONTACT DETAILS & INSTRUCTIONS</h2>
+        <div class="rules">
+            <ul>
+                <li>Store Address: Sweet Treats Bakery,Vikas Nagar,Vijayawada, Andhra Pradesh.</li>
+                <li>Contact Phone: 9876543210 / 9876543120</li>
+                <li>Email Support: sweettreats@gmail.com</li>
+                <li>Store Timings: 10:00 AM to 8:00 PM (Open Monday to Saturday).</li>
+                <li>Advance payment of 50% is required for custom cake orders.</li>
+                <li>Please place custom cake orders at least 24 to 48 hours in advance.</li>
+                <li>Home delivery is available within a 10 km radius from the store.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content" id="order">
+        <h2>ONLINE ORDER & INQUIRY FORM</h2>
+        <form>
+            <label>Full Name:</label>
+            <input type="text" placeholder="Enter your name" required>
+            <label>Phone Number:</label>
+            <input type="tel" placeholder="Enter your phone number" required>
+            <label>Email Address:</label>
+            <input type="email" placeholder="Enter your email" required>
+            <label>Delivery Address:</label>
+            <input type="text" placeholder="Enter your full address" required>
+            <label>Select Category:</label>
+            <div class="event-choice">
+                <input type="radio" name="category" value="Cakes">
+                Fresh Cakes
+            </div>
+            <div class="event-choice">
+                <input type="radio" name="category" value="Pastries">
+                Pastries & Cupcakes
+            </div>
+            <div class="event-choice">
+                <input type="radio" name="category" value="Custom">
+                Custom Designer Cake
+            </div>
+            <label>Select Item(s):</label>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Chocolate Cake">
+                Chocolate Cake (₹550)
+            </div>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Strawberry Pastry">
+                Strawberry Pastry (₹90)
+            </div>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Assorted Cupcakes">
+                Assorted Cupcakes (₹60)
+            </div>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Butter Cookies">
+                Butter Cookies (₹150)
+            </div>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Glazed Donuts">
+                Glazed Donuts (₹70)
+            </div>
+            <div class="event-choice">
+                <input type="checkbox" name="item" value="Custom Cake">
+                Custom Cake (Starting ₹800)
+            </div>
+            <label>Special Customization/Requirements:</label>
+            <textarea rows="4" placeholder="Enter message, cake text, or design instructions"></textarea>
+            <button type="submit">Place Order</button>
+            <button type="reset">Reset Form</button>
+        </form>
+    </div>
+    <div class="bottom">
+        <h3>Sweet Treats Bakery</h3>
+        <p>Freshly Baked with Love • Quality Ingredients • Best Taste</p>
+        <p>© 2026 Sweet Treats Bakery | All Rights Reserved</p>
+    </div>
+</body>
+</html>
