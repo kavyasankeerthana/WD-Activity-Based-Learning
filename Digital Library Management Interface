@@ -1,0 +1,258 @@
+Code:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Library Management</title>
+    <style>
+        body {
+            background-color: #70452b;
+            font-family: Arial;
+            margin: 0;
+            color: white;
+        }
+        .head {
+            background-color: orange;
+            color: brown;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #432719;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+        .content {
+            border: 2px solid yellow;
+            padding: 20px;
+            margin: 20px;
+        }
+        h2 {
+            color: orange;
+            text-align: center;
+        }
+        .search {
+            text-align: center;
+            padding: 15px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        button {
+            background-color: orange;
+            border: none;
+            color: brown;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .category {
+            background-color: #865735;
+            border: 2px solid yellow;
+            padding: 20px;
+            text-align: center;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .book {
+            background-color: #865735;
+            border: 2px solid yellow;
+            padding: 15px;
+            text-align: center;
+        }
+        .book img {
+            width: 120px;
+            height: 160px;
+            object-fit: contain;
+        }
+        .available {
+            color: lightgreen;
+            font-weight: bold;
+        }
+        .issued {
+            color: #ffaaaa;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid yellow;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: orange;
+            color: brown;
+        }
+        ul {
+            line-height: 2;
+        }
+        footer {
+            background-color: #432719;
+            text-align: center;
+            padding: 15px;
+        }
+        @media screen and (max-width: 700px) {
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .book-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            .category-grid, .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Digital Library Management</h1>
+        <p>Read More, Learn More and Grow More</p>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#books">Books</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#rules">Library Rules</a>
+    </nav>
+    <div class="content" id="home">
+        <h2>Welcome to Our Digital Library</h2>
+        <p>
+            Welcome to our digital library.
+            Here you can explore different books,
+            discover new authors and improve your knowledge.
+            Our library provides books from various categories
+            such as science, technology, history and fiction.
+        </p>
+    </div>
+    <div class="content">
+        <h2>Search Books</h2>
+
+        <div class="search">
+            <input type="text" placeholder="Enter book name">
+            <input type="text" placeholder="Enter category">
+            <button>Search</button>
+        </div>
+    </div>
+    <div class="content" id="categories">
+        <h2>Book Categories</h2>
+        <div class="category-grid">
+            <div class="category">Science</div>
+            <div class="category">Technology</div>
+            <div class="category">Fiction</div>
+            <div class="category">History</div>
+            <div class="category">Biography</div>
+            <div class="category">Literature</div>
+        </div>
+    </div>
+    <div class="content" id="books">
+        <h2>Popular Indian Books</h2>
+        <div class="book-grid">
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/title/Wings%20of%20Fire-L.jpg" alt="Wings of Fire">
+                <h3>Wings of Fire</h3>
+                <p>Author: A.P.J. Abdul Kalam</p>
+                <p class="available">Available</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/title/The%20Discovery%20of%20India-L.jpg" alt="The Discovery of India">
+                <h3>The Discovery of India</h3>
+                <p>Author: Jawaharlal Nehru</p>
+                <p class="available">Available</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/title/India%20After%20Gandhi-L.jpg" alt="India After Gandhi">
+                <h3>India After Gandhi</h3>
+                <p>Author: Ramachandra Guha</p>
+                <p class="issued">Issued</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/title/Malgudi%20Days-L.jpg" alt="Malgudi Days">
+                <h3>Malgudi Days</h3>
+                <p>Author: R.K. Narayan</p>
+                <p class="available">Available</p>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="catalogue">
+        <h2>Book Catalogue</h2>
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Wings of Fire</td>
+                <td>A.P.J. Abdul Kalam</td>
+                <td>Biography</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>The Discovery of India</td>
+                <td>Jawaharlal Nehru</td>
+                <td>History</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>India After Gandhi</td>
+                <td>Ramachandra Guha</td>
+                <td>History</td>
+                <td>Issued</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Malgudi Days</td>
+                <td>R.K. Narayan</td>
+                <td>Literature</td>
+                <td>Available</td>
+            </tr>
+        </table>
+    </div>
+    <div class="content" id="rules">
+        <h2>Library Rules</h2>
+        <ul>
+            <li>Maintain silence inside the library.</li>
+            <li>Return books before the due date.</li>
+            <li>Do not damage or write on library books.</li>
+            <li>Keep the library clean.</li>
+            <li>Students can borrow a maximum of two books.</li>
+            <li>Handle all books with care.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>© 2026 Digital Library Management</p>
+        <p>Thank You for Visiting Our Library!</p>
+    </footer>
+</body>
+</html>
